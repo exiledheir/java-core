@@ -1,17 +1,22 @@
 package lesson06.model;
 
 import lesson06.model.enums.TravelClass;
+import lombok.Getter;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Getter
 public class Airplane {
     private final String name;
+    private final LocalDateTime flightDate;
     private final Map<String, Seat> seats = new LinkedHashMap<>();
 
-    public Airplane(String name) {
+    public Airplane(String name, LocalDateTime flightDate) {
         this.name = name;
+        this.flightDate = flightDate;
         initializeSeats();
     }
 
